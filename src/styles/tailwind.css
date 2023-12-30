@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.el-transition {
+  transition: none !important;
+}
+.el-loading-mask {
+  background-color: transparent !important;
+}
+.el-dialog__wrapper {
+  transition: none !important;
+}
+.el-menu {
+  border-right: none !important;
+}
+.el-card__header {
+  padding: 0 !important;
+}
+.el-card__body {
+  padding: 0 !important;
+}
