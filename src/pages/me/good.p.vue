@@ -1,31 +1,31 @@
 <script setup>
-import { Plus } from '@element-plus/icons-vue'
+import { Plus } from "@element-plus/icons-vue";
 
-import { fetchClinicPatientList } from '@/api/clinic'
-import { useUserStore } from '@/store/user'
-import { onGetGender, onGetReference } from '@/utils/data'
-import { onGetAgeBirthday, onGetFormat } from '@/utils'
+import { fetchClinicPatientList } from "@/api/clinic";
+import { useUserStore } from "@/store/user";
+import { onGetGender, onGetReference } from "@/utils/data";
+import { onGetAgeBirthday, onGetFormat } from "@/utils";
 
-const userStore = useUserStore()
-const tableList = ref([])
+const userStore = useUserStore();
+const tableList = ref([]);
 
 onMounted(async () => {
-  init()
-})
+  init();
+});
 
 const init = () => {
-  onfetchClinicPatientList()
-}
+  onfetchClinicPatientList();
+};
 
 const onfetchClinicPatientList = async () => {
   const req = {
     page_number: 1,
     page_size: 10,
-  }
-  const [res, err] = await fetchClinicPatientList(req)
-  if (err) return
-  tableList.value = res.list
-}
+  };
+  const [res, err] = await fetchClinicPatientList(req);
+  if (err) return;
+  tableList.value = res.list;
+};
 
 //   name: '', // 客户姓名
 //   gender: '0', // 性别
@@ -41,10 +41,10 @@ const onfetchClinicPatientList = async () => {
 //   learnMode: '', // 获悉方式
 
 const onEdit = async (data) => {
-  userStore.isShowSickType = 'edit'
-  userStore.isShowSickData = data
-  userStore.isShowSick = true
-}
+  userStore.isShowSickType = "edit";
+  userStore.isShowSickData = data;
+  userStore.isShowSick = true;
+};
 </script>
 
 <template>
@@ -52,7 +52,13 @@ const onEdit = async (data) => {
     <div class="flex justify-between items-center mb-4">
       <h1 class="mb-3">客户管理</h1>
       <div>
-        <el-button type="primary" :icon="Plus" @click="userStore.updateIsShowSick(true, 'add')"> 新增客户 </el-button>
+        <el-button
+          type="primary"
+          :icon="Plus"
+          @click="userStore.updateIsShowSick(true, 'add')"
+        >
+          新增客户
+        </el-button>
       </div>
     </div>
 
@@ -103,8 +109,12 @@ const onEdit = async (data) => {
         <el-table-column label="出生日期" width="200">
           <template #default="scope">
             <div>
-              <el-tag class="mr-2">年龄: {{ onGetAgeBirthday(scope.row.birthday)[0] }}</el-tag>
-              <el-tag>生日: {{ onGetAgeBirthday(scope.row.birthday)[1] }}</el-tag>
+              <el-tag class="mr-2"
+                >年龄: {{ onGetAgeBirthday(scope.row.birthday)[0] }}</el-tag
+              >
+              <el-tag
+                >生日: {{ onGetAgeBirthday(scope.row.birthday)[1] }}</el-tag
+              >
             </div>
           </template>
         </el-table-column>
@@ -121,12 +131,21 @@ const onEdit = async (data) => {
         </el-table-column>
         <el-table-column fixed="right" label="操作" width="120">
           <template #default="scope">
-            <el-button link type="primary" size="small" @click="onEdit(scope.row)">编辑</el-button>
+            <el-button
+              link
+              type="primary"
+              size="small"
+              @click="onEdit(scope.row)"
+              >编辑</el-button
+            >
           </template>
         </el-table-column>
       </el-table>
     </el-card>
-    <ShowUpdateSick v-if="userStore.isShowSick" :onList="onfetchClinicPatientList" />
+    <ShowUpdateSick
+      v-if="userStore.isShowSick"
+      :onList="onfetchClinicPatientList"
+    />
   </div>
 </template>
 

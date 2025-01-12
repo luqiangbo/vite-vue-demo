@@ -1,28 +1,28 @@
-import * as path from 'path'
-import { defineConfig, loadEnv } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import AutoImport from 'unplugin-auto-import/vite'
-import VueRouter from 'unplugin-vue-router/vite'
-import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import ElementPlus from 'unplugin-element-plus/vite'
-import svgLoader from 'vite-svg-loader'
-import { VueRouterAutoImports } from 'unplugin-vue-router'
-import Layouts from 'vite-plugin-vue-layouts'
-import { createHtmlPlugin } from 'vite-plugin-html'
+import * as path from "path";
+import { defineConfig, loadEnv } from "vite";
+import vue from "@vitejs/plugin-vue";
+import AutoImport from "unplugin-auto-import/vite";
+import VueRouter from "unplugin-vue-router/vite";
+import Components from "unplugin-vue-components/vite";
+import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import ElementPlus from "unplugin-element-plus/vite";
+import svgLoader from "vite-svg-loader";
+import { VueRouterAutoImports } from "unplugin-vue-router";
+import Layouts from "vite-plugin-vue-layouts";
+import { createHtmlPlugin } from "vite-plugin-html";
 
-const pathSrc = path.resolve(__dirname, 'src')
+const pathSrc = path.resolve(__dirname, "src");
 
 const getTarget = (mode, target) => {
-  return loadEnv(mode, process.cwd())[target]
-}
+  return loadEnv(mode, process.cwd())[target];
+};
 
 export default defineConfig(({ mode }) => {
   return {
-    base: '/',
+    base: "/",
     resolve: {
       alias: {
-        '@': pathSrc,
+        "@": pathSrc,
       },
     },
     server: {
@@ -31,30 +31,30 @@ export default defineConfig(({ mode }) => {
     plugins: [
       VueRouter({
         /* options */
-        routesFolder: 'src/pages',
-        extensions: ['.p.vue'],
+        routesFolder: "src/pages",
+        extensions: [".p.vue"],
       }),
       Layouts({
-        layoutsDirs: 'src/layout',
-        defaultLayout: 'index',
+        layoutsDirs: "src/layout",
+        defaultLayout: "index",
       }),
       vue(),
       svgLoader(),
       AutoImport({
         // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等  自动导入路由
-        imports: ['vue', VueRouterAutoImports],
+        imports: ["vue", VueRouterAutoImports],
         // 自动导入 Element Plus 相关函数，如：ElMessage, ElMessageBox... (带样式)
         resolvers: [ElementPlusResolver()],
       }),
       Components({
         resolvers: [ElementPlusResolver()],
-        dts: path.resolve(pathSrc, 'components.d.ts'),
+        dts: path.resolve(pathSrc, "components.d.ts"),
       }),
       ElementPlus({}),
       createHtmlPlugin({
         inject: {
           data: {
-            title: `美好口腔 [${getTarget(mode, 'VITE_APP_TITLE')}]`,
+            title: `美好口腔 [${getTarget(mode, "VITE_APP_TITLE")}]`,
           },
         },
       }),
@@ -62,7 +62,7 @@ export default defineConfig(({ mode }) => {
     css: {
       preprocessorOptions: {
         less: {
-          math: 'parens-division',
+          math: "parens-division",
         },
       },
     },
@@ -76,10 +76,10 @@ export default defineConfig(({ mode }) => {
         output: {
           manualChunks: {
             // 分包配置，配置完成自动按需加载
-            vue: ['vue', 'vue-router', 'pinia', 'element-plus'],
+            vue: ["vue", "vue-router", "pinia", "element-plus"],
           },
         },
       },
     },
-  }
-})
+  };
+});

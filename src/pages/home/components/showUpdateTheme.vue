@@ -1,87 +1,110 @@
 <script setup>
-import { useUserStore } from '@/store/user'
-import { reactive } from 'vue'
-import { fetchColorProjectList, fetchColorStatusList, fetchColorProjectEdit, fetchColorStatusEdit } from '@/api'
+import { useUserStore } from "@/store/user";
+import { reactive } from "vue";
+import {
+  fetchColorProjectList,
+  fetchColorStatusList,
+  fetchColorProjectEdit,
+  fetchColorStatusEdit,
+} from "@/api";
 
-const userStore = useUserStore()
+const userStore = useUserStore();
 
 const ruleForm = reactive({
   color_project_list: [],
   color_status_list: [],
-})
+});
 
-const predefineColors = ref(['#ff4500', '#ff8c00', '#ffd700', '#90ee90', '#00ced1', '#1e90ff', '#c71585', '#c71585'])
+const predefineColors = ref([
+  "#ff4500",
+  "#ff8c00",
+  "#ffd700",
+  "#90ee90",
+  "#00ced1",
+  "#1e90ff",
+  "#c71585",
+  "#c71585",
+]);
 
 onMounted(() => {
-  init()
-})
+  init();
+});
 
 const init = () => {
-  onFetchColorProjectList()
-  onFetchColorStatusList()
-}
+  onFetchColorProjectList();
+  onFetchColorStatusList();
+};
 
 const onFetchColorProjectList = async () => {
-  const [res, err] = await fetchColorProjectList()
-  if (err) return
-  const list = []
+  const [res, err] = await fetchColorProjectList();
+  if (err) return;
+  const list = [];
   for (const key in res) {
-    const value = res[key]
+    const value = res[key];
     list.push({
       label: key,
       list: value.map((u) => {
-        ruleForm[`project-${u.id}`] = u.color
-        return { key: u.id, color: u.color, value: u.order_project_name, type: 'project' }
+        ruleForm[`project-${u.id}`] = u.color;
+        return {
+          key: u.id,
+          color: u.color,
+          value: u.order_project_name,
+          type: "project",
+        };
       }),
-    })
+    });
   }
-  console.log({ list })
-  ruleForm.color_project_list = list
-}
+  console.log({ list });
+  ruleForm.color_project_list = list;
+};
 
 const onFetchColorStatusList = async () => {
-  const [res, err] = await fetchColorStatusList()
-  if (err) return
+  const [res, err] = await fetchColorStatusList();
+  if (err) return;
   ruleForm.color_status_list = res.map((u) => {
-    ruleForm[`status-${u.id}`] = u.color
+    ruleForm[`status-${u.id}`] = u.color;
     return {
       key: u.id,
       value: u.order_status_text,
       color: u.color,
-      type: 'status',
-    }
-  })
-}
+      type: "status",
+    };
+  });
+};
 
 const onChageColor = (color, u) => {
-  if (u.type === 'project') {
-    onFetchColorProjectEdit(u, color)
-  } else if (u.type === 'status') {
-    onFetchColorStatusEdit(u, color)
+  if (u.type === "project") {
+    onFetchColorProjectEdit(u, color);
+  } else if (u.type === "status") {
+    onFetchColorStatusEdit(u, color);
   }
-}
+};
 
 const onFetchColorProjectEdit = async (u, color) => {
-  const [res, err] = await fetchColorProjectEdit({ id: u.key, color })
-  if (err) return
+  const [res, err] = await fetchColorProjectEdit({ id: u.key, color });
+  if (err) return;
   ElMessage({
     message: `${u.value}-修改成功!`,
-    type: 'success',
-  })
-}
+    type: "success",
+  });
+};
 
 const onFetchColorStatusEdit = async (u, color) => {
-  const [res, err] = await fetchColorStatusEdit({ id: u.key, color })
-  if (err) return
+  const [res, err] = await fetchColorStatusEdit({ id: u.key, color });
+  if (err) return;
   ElMessage({
     message: `${u.value}-修改成功!`,
-    type: 'success',
-  })
-}
+    type: "success",
+  });
+};
 </script>
 
 <template>
-  <el-dialog v-model="userStore.isShowTheme" :close-on-click-modal="false" title="主题配色">
+  <el-dialog
+    v-model="userStore.isShowTheme"
+    :close-on-click-modal="false"
+    title="主题配色"
+  >
     <div class="c-theme">
       <div>
         <div class="title-1">状态颜色</div>

@@ -1,6 +1,6 @@
 <script setup>
-import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
-import 'dayjs/locale/zh-cn'
+import zhCn from "element-plus/dist/locale/zh-cn.mjs";
+import "dayjs/locale/zh-cn";
 </script>
 
 <template>

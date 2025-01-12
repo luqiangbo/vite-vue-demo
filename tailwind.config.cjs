@@ -1,5 +1,5 @@
 module.exports = {
-  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   // darkMode: false, // 暗黑模式
   theme: {
     extend: {},
@@ -11,4 +11,4 @@ module.exports = {
   corePlugins: {
     preflight: false,
   },
-}
+};

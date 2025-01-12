@@ -1,38 +1,38 @@
 <script setup>
-import { useUserStore } from '@/store/user'
-import { actionList } from '@/utils/data.js'
+import { useUserStore } from "@/store/user";
+import { actionList } from "@/utils/data.js";
 
 const props = defineProps({
   data: {
     type: Object,
     required: true,
   },
-})
-const userStore = useUserStore()
-const tab = ref(0)
+});
+const userStore = useUserStore();
+const tab = ref(0);
 
 const onClickDropdown = (key, detail) => {
-  if (key === 'edit' || key === 'readd') {
-    userStore.updateIsShowOrder(true, key, detail)
+  if (key === "edit" || key === "readd") {
+    userStore.updateIsShowOrder(true, key, detail);
   }
-}
+};
 
 const onClickDropdownType = (key, detail) => {
-  const { id, order_id } = detail
+  const { id, order_id } = detail;
   const req = {
     id,
     order_id,
     type: key,
-  }
+  };
   if (req.id) {
-    console.log('更新状态', { req, detail })
-    userStore.onFetchOrderEdit(req)
+    console.log("更新状态", { req, detail });
+    userStore.onFetchOrderEdit(req);
   }
-}
+};
 
 const getPlacement = () => {
-  return userStore.doctorList.length === 1 ? 'bottom' : 'right'
-}
+  return userStore.doctorList.length === 1 ? "bottom" : "right";
+};
 </script>
 
 <template>
@@ -40,11 +40,17 @@ const getPlacement = () => {
     <el-popover trigger="contextmenu" :placement="getPlacement()" width="300px">
       <template #reference>
         <div class="item-order-main">
-          <div class="item-order-header" :style="{ backgroundColor: data.order_color }">
+          <div
+            class="item-order-header"
+            :style="{ backgroundColor: data.order_color }"
+          >
             <div>{{ data.patient_name }} {{ data.gender_text }}</div>
             <div>{{ data.order_project_string }}</div>
           </div>
-          <div class="item-order-body" :style="{ backgroundColor: data.status_color }">
+          <div
+            class="item-order-body"
+            :style="{ backgroundColor: data.status_color }"
+          >
             <div>{{ data.order_value }}</div>
             <div>{{ data.start_time_hm }}~{{ data.end_time_hm }}</div>
             <div>{{ data.remark }}</div>
@@ -54,7 +60,9 @@ const getPlacement = () => {
       <template #default>
         <div class="popver-order">
           <div class="popver-order-header">
-            <div class="name">姓名: {{ data.patient_name }} 性别: {{ data.gender_text }}</div>
+            <div class="name">
+              姓名: {{ data.patient_name }} 性别: {{ data.gender_text }}
+            </div>
             <div class="number">电话: {{ data.mobile }}</div>
             <div class="number">客户来源: {{ data.reference_text }}</div>
             <div class="number">客户备注: {{ data.patient_remark }}</div>
@@ -116,9 +124,12 @@ const getPlacement = () => {
                   :timestamp="`${u.order_date} ${u.order_start_time}~${u.order_end_time} `"
                   :type="u.is_current_order ? 'primary' : ''"
                 >
-                  <div><el-tag v-if="u.is_current_order">本次</el-tag> 医生: {{ u.order_doctor_name }}</div>
+                  <div>
+                    <el-tag v-if="u.is_current_order">本次</el-tag> 医生:
+                    {{ u.order_doctor_name }}
+                  </div>
                   <div>类型: {{ u.order_status_text }}</div>
-                  <div>预约项目: {{ u.order_project_text.join('，') }}</div>
+                  <div>预约项目: {{ u.order_project_text.join("，") }}</div>
                 </el-timeline-item>
               </el-timeline>
             </el-tab-pane>
@@ -127,7 +138,9 @@ const getPlacement = () => {
             <div class="left">
               <el-dropdown>
                 <el-button>
-                  预约状态<el-icon class="el-icon--right"><arrow-down /></el-icon>
+                  预约状态<el-icon class="el-icon--right"
+                    ><arrow-down
+                  /></el-icon>
                 </el-button>
                 <template #dropdown>
                   <el-dropdown-menu>
@@ -145,11 +158,17 @@ const getPlacement = () => {
             <div class="right">
               <el-dropdown>
                 <el-button>
-                  更多操作<el-icon class="el-icon--right"><arrow-down /></el-icon>
+                  更多操作<el-icon class="el-icon--right"
+                    ><arrow-down
+                  /></el-icon>
                 </el-button>
                 <template #dropdown>
                   <el-dropdown-menu>
-                    <el-dropdown-item v-for="v in actionList" :key="v.key" @click="onClickDropdown(v.key, data)">
+                    <el-dropdown-item
+                      v-for="v in actionList"
+                      :key="v.key"
+                      @click="onClickDropdown(v.key, data)"
+                    >
                       {{ v.value }}
                     </el-dropdown-item>
                   </el-dropdown-menu>

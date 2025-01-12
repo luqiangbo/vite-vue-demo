@@ -1,8 +1,8 @@
 <script setup>
-import { Close, Refresh } from '@element-plus/icons-vue'
-import _ from 'lodash-es'
+import { Close, Refresh } from "@element-plus/icons-vue";
+import _ from "lodash-es";
 
-import { fetchCaptchaData, fetchCaptchaCheckData } from '@/api/clinic'
+import { fetchCaptchaData, fetchCaptchaCheckData } from "@/api/clinic";
 
 const props = defineProps({
   onClose: {
@@ -13,80 +13,80 @@ const props = defineProps({
     type: Function,
     required: true,
   },
-})
+});
 
-const isOpenAuth = ref(true)
-const imageAuthA = ref('')
-const imageAuthB = ref('')
-const authKey = ref('')
-const xyList = ref([])
+const isOpenAuth = ref(true);
+const imageAuthA = ref("");
+const imageAuthB = ref("");
+const authKey = ref("");
+const xyList = ref([]);
 
 onMounted(async () => {
-  init()
-})
+  init();
+});
 
 const init = () => {
   //
-  console.log('init showAuth')
-  onfetchCaptchaData()
-}
+  console.log("init showAuth");
+  onfetchCaptchaData();
+};
 
 const onfetchCaptchaData = async () => {
   const [res, err] = await fetchCaptchaData({
-    dots: '131',
-    Key: '131',
-  })
-  if (err) return
+    dots: "131",
+    Key: "131",
+  });
+  if (err) return;
 
-  imageAuthA.value = res.b64
-  imageAuthB.value = res.tb64
-  authKey.value = res.key
-}
+  imageAuthA.value = res.b64;
+  imageAuthB.value = res.tb64;
+  authKey.value = res.key;
+};
 
 const onCloseAuth = () => {
-  props.onClose()
-}
+  props.onClose();
+};
 
 const onUpdateAuth = () => {
-  xyList.value = []
-  onfetchCaptchaData()
-}
+  xyList.value = [];
+  onfetchCaptchaData();
+};
 
 const onXY = (event) => {
-  const x = event.offsetX
-  const y = event.offsetY
+  const x = event.offsetX;
+  const y = event.offsetY;
   if (xyList.value.length > 10) {
-    return
+    return;
   }
 
   xyList.value.push({
     x: x,
     y: y,
     show: true,
-  })
-}
+  });
+};
 
 const onAuth = () => {
-  let list = []
+  let list = [];
   xyList.value.forEach((v) => {
-    list.push(v.x)
-    list.push(v.y)
-  })
-  const listString = list.join(',')
-  onfetchCaptchaCheckData(listString)
-}
+    list.push(v.x);
+    list.push(v.y);
+  });
+  const listString = list.join(",");
+  onfetchCaptchaCheckData(listString);
+};
 
 const onfetchCaptchaCheckData = async (listString) => {
   const req = {
     key: authKey.value,
     dots: listString,
-  }
+  };
 
-  const [res, err] = await fetchCaptchaCheckData(req)
-  if (err) return
+  const [res, err] = await fetchCaptchaCheckData(req);
+  if (err) return;
 
-  props.onOk()
-}
+  props.onOk();
+};
 </script>
 
 <template>
@@ -100,17 +100,26 @@ const onfetchCaptchaCheckData = async (listString) => {
   >
     <div>
       <div class="flex items-center justify-center mb-2">
-        <div class="mr-2">请点击下图<span class="text-blue-500">依次</span>点击 :</div>
+        <div class="mr-2">
+          请点击下图<span class="text-blue-500">依次</span>点击 :
+        </div>
         <img class="block" :src="imageAuthB" />
       </div>
       <div class="flex justify-center">
-        <div class="flex justify-center mb-2 overflow-hidden rounded-lg w-[300px] relative" @click="onXY">
+        <div
+          class="flex justify-center mb-2 overflow-hidden rounded-lg w-[300px] relative"
+          @click="onXY"
+        >
           <img class="block" :src="imageAuthA" />
           <div
             v-for="(v, i) in xyList"
             :key="i"
             class="xy-item"
-            :style="{ left: v.x + 'px', top: v.y + 'px', display: v.show ? 'block' : 'none' }"
+            :style="{
+              left: v.x + 'px',
+              top: v.y + 'px',
+              display: v.show ? 'block' : 'none',
+            }"
           >
             {{ i + 1 }}
           </div>

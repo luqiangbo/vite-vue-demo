@@ -1,7 +1,7 @@
 <script setup>
-import ComShowUpdateOrder from './showUpdateOrder.vue'
-import { useUserStore } from '@/store/user'
-const userStore = useUserStore()
+import ComShowUpdateOrder from "./showUpdateOrder.vue";
+import { useUserStore } from "@/store/user";
+const userStore = useUserStore();
 </script>
 
 <template>

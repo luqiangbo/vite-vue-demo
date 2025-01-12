@@ -1,97 +1,106 @@
 <script setup>
-import { Expand, Fold } from '@element-plus/icons-vue'
-import { GridLayout, GridItem } from 'vue3-grid-layout-next'
-import _ from 'lodash-es'
-import dayjs from 'dayjs'
+import { Expand, Fold } from "@element-plus/icons-vue";
+import { GridLayout, GridItem } from "vue3-grid-layout-next";
+import _ from "lodash-es";
+import dayjs from "dayjs";
 
-import { order2xywhWeek, order2xywhDate, COLUMN_X, getWeekDays, orderListTrim, onMoveResize } from './utils.js'
-import ComTimeList from './timeList.vue'
-import ComTimeLayout from './timeLayout.vue'
-import ComShowUpdateTheme from './showUpdateTheme.vue'
-import ComShowPopover from './showPopover.vue'
-import { useUserStore } from '@/store/user'
-const userStore = useUserStore()
+import {
+  order2xywhWeek,
+  order2xywhDate,
+  COLUMN_X,
+  getWeekDays,
+  orderListTrim,
+  onMoveResize,
+} from "./utils.js";
+import ComTimeList from "./timeList.vue";
+import ComTimeLayout from "./timeLayout.vue";
+import ComShowUpdateTheme from "./showUpdateTheme.vue";
+import ComShowPopover from "./showPopover.vue";
+import { useUserStore } from "@/store/user";
+const userStore = useUserStore();
 
 watch(
   () => userStore.doctorPageActive,
   _.debounce((newValue) => {
-    console.log('分页')
-    userStore.updateDoctorList()
-    userStore.onFetchOrderList()
+    console.log("分页");
+    userStore.updateDoctorList();
+    userStore.onFetchOrderList();
   }, 300),
-)
+);
 
 watch(
   () => userStore.timeType,
   _.debounce((newValue) => {}, 300),
-)
+);
 
 onMounted(async () => {
-  init()
-})
+  init();
+});
 
 const init = () => {
   // 周
-  userStore.updateWeekList(getWeekDays())
-}
+  userStore.updateWeekList(getWeekDays());
+};
 
 // 移动后
 const onMoved = (id, x, y) => {
   // onMoveResize('moved', id)
-}
+};
 
 // 移动时
 const onMove = _.debounce((id, x, y) => {
   // console.log('onMove', { id, x, y })
-  onMoveResize('move', id, x, y)
-}, 1000)
+  onMoveResize("move", id, x, y);
+}, 1000);
 
 const onResize = (id, h, w, hpx, wpx) => {
-  onMoveResize('resize', id)
-}
+  onMoveResize("resize", id);
+};
 
 const getColNum = () => {
-  let res
-  if (userStore.timeType === 'week') {
-    res = 7 * COLUMN_X
+  let res;
+  if (userStore.timeType === "week") {
+    res = 7 * COLUMN_X;
   } else {
-    res = userStore.doctorList.length * COLUMN_X
+    res = userStore.doctorList.length * COLUMN_X;
   }
-  return res
-}
+  return res;
+};
 
 const isShowOrder = (data) => {
-  const { doctor_id, type } = data
-  const res = userStore.filterDoctorList.indexOf(doctor_id) !== -1 && userStore.filterStatusList.indexOf(type) !== -1
-  return res
-}
+  const { doctor_id, type } = data;
+  const res =
+    userStore.filterDoctorList.indexOf(doctor_id) !== -1 &&
+    userStore.filterStatusList.indexOf(type) !== -1;
+  return res;
+};
 
 const getTotal = () => {
-  const list = userStore.doctorObj?.major_doctor || []
-  return list.length
-}
+  const list = userStore.doctorObj?.major_doctor || [];
+  return list.length;
+};
 
 const onSizeChage = (a) => {
-  console.log({ a })
-}
+  console.log({ a });
+};
 
 const isNow = (md) => {
-  const nowMd = dayjs().format('MM-DD')
-  return md === nowMd
-}
+  const nowMd = dayjs().format("MM-DD");
+  return md === nowMd;
+};
 
 const onGetDoctorOrder = (key) => {
-  const layout = userStore.layout
-  let number = 0
+  const layout = userStore.layout;
+  let number = 0;
   if (layout.length) {
     number = _.size(
       _.filter(layout, (u) => {
-        return u.data.doctor_id === key
+        return u.data.doctor_id === key;
       }),
-    )
+    );
   }
-  return number
-}
+  return number;
+};
 </script>
 
 <template>
@@ -108,27 +117,52 @@ const onGetDoctorOrder = (key) => {
             <!-- <el-button @click="onClickUpdateOrder"> 保存 </el-button> -->
             <!-- <el-button @click="userStore.updateIsShowTheme(true)"> 主题配色 </el-button> -->
             <!-- <el-button @click="userStore.updateIsShowSick(true, 'add')"> 新增客户 </el-button> -->
-            <el-button @click="userStore.updateIsShowOrder(true, 'add')"> 新增预约 </el-button>
+            <el-button @click="userStore.updateIsShowOrder(true, 'add')">
+              新增预约
+            </el-button>
           </div>
           <div>
-            <el-radio-group v-model="userStore.timeType" @change="userStore.updateTimeType()">
-              <el-radio-button label="date" :border="true"> 日 </el-radio-button>
-              <el-radio-button label="week" :border="true"> 周 </el-radio-button>
+            <el-radio-group
+              v-model="userStore.timeType"
+              @change="userStore.updateTimeType()"
+            >
+              <el-radio-button label="date" :border="true">
+                日
+              </el-radio-button>
+              <el-radio-button label="week" :border="true">
+                周
+              </el-radio-button>
             </el-radio-group>
           </div>
         </div>
         <div class="header-col">
           <div class="lr header-left">
-            <el-button :icon="userStore.isShowFilter ? Expand : Fold" @click="userStore.updateShowFilter" />
+            <el-button
+              :icon="userStore.isShowFilter ? Expand : Fold"
+              @click="userStore.updateShowFilter"
+            />
           </div>
           <div v-if="userStore.timeType === 'week'" class="center">
-            <div v-for="u in userStore.weekList" :key="u.key" class="center-item">
-              <div>{{ u.value }} <el-tag v-if="isNow(u.md)" effect="dark" size="small">今</el-tag></div>
+            <div
+              v-for="u in userStore.weekList"
+              :key="u.key"
+              class="center-item"
+            >
+              <div>
+                {{ u.value }}
+                <el-tag v-if="isNow(u.md)" effect="dark" size="small"
+                  >今</el-tag
+                >
+              </div>
               <div>{{ u.md }}[{{ u.number }}]</div>
             </div>
           </div>
           <div v-if="userStore.timeType === 'date'" class="center">
-            <div v-for="u in userStore.doctorList" :key="u.key" class="center-item">
+            <div
+              v-for="u in userStore.doctorList"
+              :key="u.key"
+              class="center-item"
+            >
               <div>{{ u.value }}[{{ onGetDoctorOrder(u.key) }}]</div>
             </div>
           </div>

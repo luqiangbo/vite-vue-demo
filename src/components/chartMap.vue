@@ -1,48 +1,48 @@
 <script setup>
-import * as echarts from 'echarts'
-let chart = ref()
+import * as echarts from "echarts";
+let chart = ref();
 
 onMounted(() => {
-  const myChart = echarts.init(chart.value)
+  const myChart = echarts.init(chart.value);
   let options = {
     title: {
-      text: '预约状态',
-      left: 'center',
+      text: "预约状态",
+      left: "center",
     },
     tooltip: {
-      trigger: 'item',
-      formatter: '{a} <br/>{b} : {c} ({d}%)',
+      trigger: "item",
+      formatter: "{a} <br/>{b} : {c} ({d}%)",
     },
     legend: {
-      orient: 'vertical',
-      left: 'left',
-      data: ['已预约', '已挂号', '治疗中', '治疗完成', '已离店'],
+      orient: "vertical",
+      left: "left",
+      data: ["已预约", "已挂号", "治疗中", "治疗完成", "已离店"],
     },
     series: [
       {
-        name: '预约状态',
-        type: 'pie',
-        radius: '55%',
-        center: ['50%', '60%'],
+        name: "预约状态",
+        type: "pie",
+        radius: "55%",
+        center: ["50%", "60%"],
         data: [
-          { value: 335, name: '已预约' },
-          { value: 310, name: '已挂号' },
-          { value: 234, name: '治疗中' },
-          { value: 135, name: '治疗完成' },
-          { value: 1548, name: '已离店' },
+          { value: 335, name: "已预约" },
+          { value: 310, name: "已挂号" },
+          { value: 234, name: "治疗中" },
+          { value: 135, name: "治疗完成" },
+          { value: 1548, name: "已离店" },
         ],
         emphasis: {
           itemStyle: {
             shadowBlur: 10,
             shadowOffsetX: 0,
-            shadowColor: '#efefef',
+            shadowColor: "#efefef",
           },
         },
       },
     ],
-  }
-  myChart.setOption(options)
-})
+  };
+  myChart.setOption(options);
+});
 </script>
 
 <template>

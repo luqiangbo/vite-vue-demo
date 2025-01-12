@@ -1,14 +1,14 @@
 export const mapUsa = {
-  type: 'FeatureCollection',
+  type: "FeatureCollection",
   features: [
     {
-      type: 'Feature',
-      id: '01',
+      type: "Feature",
+      id: "01",
       properties: {
-        name: 'Alabama',
+        name: "Alabama",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-87.359296, 35.00118],
@@ -49,13 +49,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '02',
+      type: "Feature",
+      id: "02",
       properties: {
-        name: 'Alaska',
+        name: "Alaska",
       },
       geometry: {
-        type: 'MultiPolygon',
+        type: "MultiPolygon",
         coordinates: [
           [
             [
@@ -1291,13 +1291,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '04',
+      type: "Feature",
+      id: "04",
       properties: {
-        name: 'Arizona',
+        name: "Arizona",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-109.042503, 37.000263],
@@ -1337,13 +1337,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '05',
+      type: "Feature",
+      id: "05",
       properties: {
-        name: 'Arkansas',
+        name: "Arkansas",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-94.473842, 36.501861],
@@ -1388,13 +1388,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '06',
+      type: "Feature",
+      id: "06",
       properties: {
-        name: 'California',
+        name: "California",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-123.233256, 42.006186],
@@ -1495,13 +1495,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '08',
+      type: "Feature",
+      id: "08",
       properties: {
-        name: 'Colorado',
+        name: "Colorado",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-107.919731, 41.003906],
@@ -1525,13 +1525,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '09',
+      type: "Feature",
+      id: "09",
       properties: {
-        name: 'Connecticut',
+        name: "Connecticut",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-73.053528, 42.039048],
@@ -1555,13 +1555,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '10',
+      type: "Feature",
+      id: "10",
       properties: {
-        name: 'Delaware',
+        name: "Delaware",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-75.414089, 39.804456],
@@ -1582,13 +1582,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '11',
+      type: "Feature",
+      id: "11",
       properties: {
-        name: 'District of Columbia',
+        name: "District of Columbia",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-77.035264, 38.993869],
@@ -1601,13 +1601,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '12',
+      type: "Feature",
+      id: "12",
       properties: {
-        name: 'Florida',
+        name: "Florida",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-85.497137, 30.997536],
@@ -1693,13 +1693,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '13',
+      type: "Feature",
+      id: "13",
       properties: {
-        name: 'Georgia',
+        name: "Georgia",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-83.109191, 35.00118],
@@ -1758,13 +1758,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '15',
+      type: "Feature",
+      id: "15",
       properties: {
-        name: 'Hawaii',
+        name: "Hawaii",
       },
       geometry: {
-        type: 'MultiPolygon',
+        type: "MultiPolygon",
         coordinates: [
           [
             [
@@ -1839,13 +1839,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '16',
+      type: "Feature",
+      id: "16",
       properties: {
-        name: 'Idaho',
+        name: "Idaho",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-116.04751, 49.000239],
@@ -1919,13 +1919,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '17',
+      type: "Feature",
+      id: "17",
       properties: {
-        name: 'Illinois',
+        name: "Illinois",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-90.639984, 42.510065],
@@ -2000,13 +2000,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '18',
+      type: "Feature",
+      id: "18",
       properties: {
-        name: 'Indiana',
+        name: "Indiana",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-85.990061, 41.759724],
@@ -2060,13 +2060,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '19',
+      type: "Feature",
+      id: "19",
       properties: {
-        name: 'Iowa',
+        name: "Iowa",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-91.368417, 43.501391],
@@ -2124,13 +2124,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '20',
+      type: "Feature",
+      id: "20",
       properties: {
-        name: 'Kansas',
+        name: "Kansas",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-101.90605, 40.001626],
@@ -2151,13 +2151,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '21',
+      type: "Feature",
+      id: "21",
       properties: {
-        name: 'Kentucky',
+        name: "Kentucky",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-83.903347, 38.769315],
@@ -2240,13 +2240,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '22',
+      type: "Feature",
+      id: "22",
       properties: {
-        name: 'Louisiana',
+        name: "Louisiana",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-93.608485, 33.018527],
@@ -2330,13 +2330,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '23',
+      type: "Feature",
+      id: "23",
       properties: {
-        name: 'Maine',
+        name: "Maine",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-70.703921, 43.057759],
@@ -2410,13 +2410,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '24',
+      type: "Feature",
+      id: "24",
       properties: {
-        name: 'Maryland',
+        name: "Maryland",
       },
       geometry: {
-        type: 'MultiPolygon',
+        type: "MultiPolygon",
         coordinates: [
           [
             [
@@ -2494,13 +2494,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '25',
+      type: "Feature",
+      id: "25",
       properties: {
-        name: 'Massachusetts',
+        name: "Massachusetts",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-70.917521, 42.887974],
@@ -2543,13 +2543,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '26',
+      type: "Feature",
+      id: "26",
       properties: {
-        name: 'Michigan',
+        name: "Michigan",
       },
       geometry: {
-        type: 'MultiPolygon',
+        type: "MultiPolygon",
         coordinates: [
           [
             [
@@ -2723,13 +2723,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '27',
+      type: "Feature",
+      id: "27",
       properties: {
-        name: 'Minnesota',
+        name: "Minnesota",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-92.014696, 46.705401],
@@ -2820,13 +2820,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '28',
+      type: "Feature",
+      id: "28",
       properties: {
-        name: 'Mississippi',
+        name: "Mississippi",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-88.471115, 34.995703],
@@ -2880,13 +2880,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '29',
+      type: "Feature",
+      id: "29",
       properties: {
-        name: 'Missouri',
+        name: "Missouri",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-91.833957, 40.609566],
@@ -2947,13 +2947,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '30',
+      type: "Feature",
+      id: "30",
       properties: {
-        name: 'Montana',
+        name: "Montana",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-104.047534, 49.000239],
@@ -3013,13 +3013,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '31',
+      type: "Feature",
+      id: "31",
       properties: {
-        name: 'Nebraska',
+        name: "Nebraska",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-103.324578, 43.002989],
@@ -3056,13 +3056,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '32',
+      type: "Feature",
+      id: "32",
       properties: {
-        name: 'Nevada',
+        name: "Nevada",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-117.027882, 42.000709],
@@ -3091,13 +3091,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '33',
+      type: "Feature",
+      id: "33",
       properties: {
-        name: 'New Hampshire',
+        name: "New Hampshire",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-71.08183, 45.303304],
@@ -3133,13 +3133,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '34',
+      type: "Feature",
+      id: "34",
       properties: {
-        name: 'New Jersey',
+        name: "New Jersey",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-74.236547, 41.14083],
@@ -3179,13 +3179,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '35',
+      type: "Feature",
+      id: "35",
       properties: {
-        name: 'New Mexico',
+        name: "New Mexico",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-107.421329, 37.000263],
@@ -3210,13 +3210,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '36',
+      type: "Feature",
+      id: "36",
       properties: {
-        name: 'New York',
+        name: "New York",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-73.343806, 45.013027],
@@ -3292,13 +3292,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '37',
+      type: "Feature",
+      id: "37",
       properties: {
-        name: 'North Carolina',
+        name: "North Carolina",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-80.978661, 36.562108],
@@ -3367,13 +3367,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '38',
+      type: "Feature",
+      id: "38",
       properties: {
-        name: 'North Dakota',
+        name: "North Dakota",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-97.228743, 49.000239],
@@ -3397,13 +3397,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '39',
+      type: "Feature",
+      id: "39",
       properties: {
-        name: 'Ohio',
+        name: "Ohio",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-80.518598, 41.978802],
@@ -3458,13 +3458,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '40',
+      type: "Feature",
+      id: "40",
       properties: {
-        name: 'Oklahoma',
+        name: "Oklahoma",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-100.087706, 37.000263],
@@ -3517,13 +3517,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '41',
+      type: "Feature",
+      id: "41",
       properties: {
-        name: 'Oregon',
+        name: "Oregon",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-123.211348, 46.174138],
@@ -3587,13 +3587,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '42',
+      type: "Feature",
+      id: "42",
       properties: {
-        name: 'Pennsylvania',
+        name: "Pennsylvania",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-79.76278, 42.252649],
@@ -3634,13 +3634,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '44',
+      type: "Feature",
+      id: "44",
       properties: {
-        name: 'Rhode Island',
+        name: "Rhode Island",
       },
       geometry: {
-        type: 'MultiPolygon',
+        type: "MultiPolygon",
         coordinates: [
           [
             [
@@ -3669,13 +3669,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '45',
+      type: "Feature",
+      id: "45",
       properties: {
-        name: 'South Carolina',
+        name: "South Carolina",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-82.764143, 35.066903],
@@ -3727,13 +3727,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '46',
+      type: "Feature",
+      id: "46",
       properties: {
-        name: 'South Dakota',
+        name: "South Dakota",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-104.047534, 45.944106],
@@ -3770,13 +3770,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '47',
+      type: "Feature",
+      id: "47",
       properties: {
-        name: 'Tennessee',
+        name: "Tennessee",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-88.054868, 36.496384],
@@ -3827,13 +3827,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '48',
+      type: "Feature",
+      id: "48",
       properties: {
-        name: 'Texas',
+        name: "Texas",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-101.812942, 36.501861],
@@ -3993,13 +3993,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '49',
+      type: "Feature",
+      id: "49",
       properties: {
-        name: 'Utah',
+        name: "Utah",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-112.164359, 41.995232],
@@ -4019,13 +4019,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '50',
+      type: "Feature",
+      id: "50",
       properties: {
-        name: 'Vermont',
+        name: "Vermont",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-71.503554, 45.013027],
@@ -4061,13 +4061,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '51',
+      type: "Feature",
+      id: "51",
       properties: {
-        name: 'Virginia',
+        name: "Virginia",
       },
       geometry: {
-        type: 'MultiPolygon',
+        type: "MultiPolygon",
         coordinates: [
           [
             [
@@ -4165,13 +4165,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '53',
+      type: "Feature",
+      id: "53",
       properties: {
-        name: 'Washington',
+        name: "Washington",
       },
       geometry: {
-        type: 'MultiPolygon',
+        type: "MultiPolygon",
         coordinates: [
           [
             [
@@ -4261,13 +4261,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '54',
+      type: "Feature",
+      id: "54",
       properties: {
-        name: 'West Virginia',
+        name: "West Virginia",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-80.518598, 40.636951],
@@ -4340,13 +4340,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '55',
+      type: "Feature",
+      id: "55",
       properties: {
-        name: 'Wisconsin',
+        name: "Wisconsin",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-90.415429, 46.568478],
@@ -4429,13 +4429,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '56',
+      type: "Feature",
+      id: "56",
       properties: {
-        name: 'Wyoming',
+        name: "Wyoming",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-109.080842, 45.002073],
@@ -4456,13 +4456,13 @@ export const mapUsa = {
       },
     },
     {
-      type: 'Feature',
-      id: '72',
+      type: "Feature",
+      id: "72",
       properties: {
-        name: 'Puerto Rico',
+        name: "Puerto Rico",
       },
       geometry: {
-        type: 'Polygon',
+        type: "Polygon",
         coordinates: [
           [
             [-66.448338, 17.984326],
@@ -4487,4 +4487,4 @@ export const mapUsa = {
       },
     },
   ],
-}
+};

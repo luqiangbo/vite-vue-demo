@@ -1,15 +1,15 @@
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
 export const useGoodStore = defineStore({
-  id: 'clinic-good', // id必填，且需要唯一
+  id: "clinic-good", // id必填，且需要唯一
   state: () => {
     return {
       routers: [],
       isShowUser: false,
-      isShowUserType: '',
+      isShowUserType: "",
       isShowUserData: {},
       areaAll: [],
-    }
+    };
   },
   actions: {},
-})
+});

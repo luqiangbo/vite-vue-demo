@@ -1,11 +1,11 @@
 <script setup>
-import ChartMap from '@/components/chartMap.vue'
+import ChartMap from "@/components/chartMap.vue";
 
 onMounted(async () => {
-  init()
-})
+  init();
+});
 
-const init = () => {}
+const init = () => {};
 </script>
 
 <template>
